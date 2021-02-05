@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -10,7 +10,7 @@ import { LaunchDetailsService } from 'src/app/services/launch-details.service';
   templateUrl: './space-x-list.component.html',
   styleUrls: ['./space-x-list.component.scss']
 })
-export class SpaceXListComponent implements OnInit {
+export class SpaceXListComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
@@ -18,26 +18,44 @@ export class SpaceXListComponent implements OnInit {
   ) { }
 
   private routeParamSub: Subscription;
+  private getDetailsSub: Subscription;
   spaceXSearchResults: SpaceXDetails[] = [];
 
   ngOnInit(): void {
+    let url = '', param;
     this.routeParamSub = this.route.paramMap
       .subscribe((paramMap: ParamMap) => {
-        this.getLaunchDetails(paramMap.get('year'));
+        console.log(paramMap);
+        param = paramMap.get('year');
+        if (!!param) {
+          url += '&launch_year=' + param;
+        }
+        param = paramMap.get('launchflag');
+        if (!!param && JSON.parse(param.toLowerCase())) {
+          url += '&launch_success=' + param;
+        }
+        param = paramMap.get('landflag');
+        if (!!param && JSON.parse(param.toLowerCase())) {
+          url += '&land_success=' + param;
+        }
+        this.getListOfDetailsFromAPI(url);
+        url = '';
       });
   }
 
-  private getLaunchDetails(year: string | null): void {
-    if (!!year) {
-      this.launchDetailsService.getLaunchDetailsByYear(parseInt(year))
-        .subscribe((data: SpaceXDetails[]) => {
-          console.log(data);
-          this.spaceXSearchResults = data;
-        });
-    }
+  getListOfDetailsFromAPI(url: string) {
+    this.getDetailsSub = this.launchDetailsService.getListofLaunchDetails(url)
+      .subscribe((data: SpaceXDetails[]) => {
+        this.spaceXSearchResults = data;
+        this.getDetailsSub.unsubscribe();
+      });
   }
 
   resultsTrackByFn(index: number, result: SpaceXDetails) {
     return result.mission_id;
+  }
+
+  ngOnDestroy() {
+    this.routeParamSub.unsubscribe();
   }
 }

@@ -24,7 +24,10 @@
             padding: 2px 15px;
             border-radius: 5px;
             cursor: pointer;
-            &:hover{
+            &:hover {
+                background-color: #567419cd;
+            }
+            &.selected {
                 background-color: #567419cd;
             }
         }

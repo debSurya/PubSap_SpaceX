@@ -5,7 +5,8 @@
     </div>
     <div class="filters-list">
         <div class="year-filter" *ngFor="let year of launchYears">
-            <span class="filter" (click)="filterLaunchesLandingsByYear(year)">{{year}}</span>
+            <span class="filter" [ngClass]="{'selected' : filterState.year === year}"
+                (click)="filterLaunchesLandingsByYear(year)">{{year}}</span>
         </div>
     </div>
     <div>
@@ -13,10 +14,12 @@
     </div>
     <div class="filters-list">
         <div class="year-filter">
-            <span class="filter" (click)="filterLaunchesLandings()">True</span>
+            <span class="filter" [ngClass]="{'selected' : filterState.launchState === true}"
+                (click)="filterLaunches(true)">True</span>
         </div>
         <div class="year-filter">
-            <span class="filter" (click)="filterLaunchesLandings()">False</span>
+            <span class="filter" [ngClass]="{'selected' : filterState.launchState === false}"
+                (click)="filterLaunches(false)">False</span>
         </div>
     </div>
     <div>
@@ -24,10 +27,12 @@
     </div>
     <div class="filters-list">
         <div class="year-filter">
-            <span class="filter" (click)="filterLaunchesLandings()">True</span>
+            <span class="filter" [ngClass]="{'selected' : filterState.landingState === true}"
+                (click)="filterLandings(true)">True</span>
         </div>
         <div class="year-filter">
-            <span class="filter" (click)="filterLaunchesLandings()">False</span>
+            <span class="filter" [ngClass]="{'selected' : filterState.landingState === false}"
+                (click)="filterLandings(false)">False</span>
         </div>
     </div>
 </div>

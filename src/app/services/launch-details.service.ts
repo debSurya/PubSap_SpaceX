@@ -12,9 +12,9 @@ export class LaunchDetailsService {
 
   constructor(private http: HttpClient) { }
 
-  getLaunchDetailsByYear(year: number): Observable<SpaceXDetails[]> {
+  getListofLaunchDetails(param: string): Observable<SpaceXDetails[]> {
     return this.http.get<SpaceXDetails[]>(
-      `${environment.launchDetailsAPIUrl}?limit=100&launch_success=true&land_success=true&launch_year=${year}`
+      `${environment.launchDetailsAPIUrl}?limit=100${param}`
     );
   }
 }
