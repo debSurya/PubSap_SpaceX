@@ -1,0 +1,28 @@
+<div class="search-results-container">
+    <div class="result" *ngFor="let result of spaceXSearchResults; trackBy: resultsTrackByFn">
+        <div class="mission-img">
+            <img src={{result.links.mission_patch}}>
+        </div>
+        <div class="mission-name-flight-text">
+            <span>{{result.mission_name}}#{{result.flight_number}}</span>
+        </div>
+        <div class="mission-ids">
+            <div class="ids-label">Mission Ids:</div>
+            <ul>
+                <li *ngFor="let id of result.mission_id">{{id}}</li>
+            </ul>
+        </div>
+        <div class="launch-details-text">
+            <span class="text">Launch year:</span>
+            <span class="text-val">{{result.launch_year}}</span>
+        </div>
+        <div class="launch-details-text">
+            <span class="text">Successful launch:</span>
+            <span class="text-val">{{result.launch_success}}</span>
+        </div>
+        <div class="launch-details-text">
+            <span class="text">Successful landing:</span>
+            <span class="text-val">{{result.launch_landing}}</span>
+        </div>
+    </div>
+</div>

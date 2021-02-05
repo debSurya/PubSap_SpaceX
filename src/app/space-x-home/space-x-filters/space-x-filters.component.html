@@ -1,0 +1,33 @@
+<div class="filters-container">
+    <div class="filters-head-text">Filters</div>
+    <div>
+        <div class="filter-type-text">Launch Year</div>
+    </div>
+    <div class="filters-list">
+        <div class="year-filter" *ngFor="let year of launchYears">
+            <span class="filter" (click)="filterLaunchesLandingsByYear(year)">{{year}}</span>
+        </div>
+    </div>
+    <div>
+        <div class="filter-type-text">Successful Launch</div>
+    </div>
+    <div class="filters-list">
+        <div class="year-filter">
+            <span class="filter" (click)="filterLaunchesLandings()">True</span>
+        </div>
+        <div class="year-filter">
+            <span class="filter" (click)="filterLaunchesLandings()">False</span>
+        </div>
+    </div>
+    <div>
+        <div class="filter-type-text">Successful Landing</div>
+    </div>
+    <div class="filters-list">
+        <div class="year-filter">
+            <span class="filter" (click)="filterLaunchesLandings()">True</span>
+        </div>
+        <div class="year-filter">
+            <span class="filter" (click)="filterLaunchesLandings()">False</span>
+        </div>
+    </div>
+</div>
