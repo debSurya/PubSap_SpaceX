@@ -29,6 +29,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: login to heroku
+        env: 
+          HEROKU_API_KEY: ${{ secrets.DEPLOY_SPACEX_PUBSAP_KEY }}
+        run: heroku container:login 
+
       - name: add heroku remote
         run: heroku git:remote -a spacex-pubsap
 
