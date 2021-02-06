@@ -35,4 +35,4 @@ jobs:
           heroku git:remote -a spacex-pubsap
 
       - name: push to heroku
-        run: git push origin heroku main
+        run: git push heroku main
