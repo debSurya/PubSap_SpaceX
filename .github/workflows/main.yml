@@ -27,9 +27,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2      
-      - uses: akhileshns/heroku-deploy@v3.10.9
-        with:
-          heroku_api_key: ${{secrets.DEPLOY_SPACEX_PUBSAP_KEY}}
-          heroku_app_name: "spacex-pubsap"
-          heroku_email: "cod3rsurya@gmail.com"
+      - name: heroku login
+        run: heroku login -i
+
+      - name: heroku create
+        run: |
+          git remote -v
+          heroku git:remote -a spacex-pubsap
+
+      - name: heroku deploy
+        run: git push heroku master
