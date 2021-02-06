@@ -23,7 +23,7 @@ jobs:
       - name: run build
         run: npm run build:ssr
 
-  deploy:
+  add_heroku_remote:
     needs: build
 
     runs-on: ubuntu-latest
@@ -31,14 +31,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: login heroku
-        run: heroku login
-
-      - name: clone heroku app
-        run: heroku git:clone -a spacex-pubsap
-
       - name: add heroku remote
         run: heroku git:remote -a spacex-pubsap
+
+  deploy:
+    needs: add_heroku_remote
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
 
       - name: push to heroku
         run: git push heroku main
