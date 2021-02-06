@@ -28,7 +28,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: deploy to heroku
-        run: |
-          heroku git:remote -a spacex-pubsap
-          git push heroku main
+
+      - name: add heroku remote
+        run: heroku git:remote -a spacex-pubsap
+
+      - name: push to heroku
+        run: git push heroku main
