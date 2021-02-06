@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { SpaceXHomeComponent } from './space-x-home/space-x-home.component';
 import { SpaceXFiltersComponent } from './space-x-home/space-x-filters/space-x-filters.component';
 import { SpaceXListComponent } from './space-x-home/space-x-list/space-x-list.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SpaceXHomeComponent,
     SpaceXFiltersComponent,
-    SpaceXListComponent
+    SpaceXListComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
