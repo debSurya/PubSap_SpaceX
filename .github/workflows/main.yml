@@ -22,20 +22,3 @@ jobs:
       
       - name: run build
         run: npm run build:ssr
-
-  deploy:
-    needs: build
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: heroku login
-        run: heroku login -i
-
-      - name: heroku create
-        run: |
-          git remote -v
-          heroku git:remote -a spacex-pubsap
-
-      - name: heroku deploy
-        run: git push heroku main
