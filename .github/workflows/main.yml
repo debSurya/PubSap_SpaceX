@@ -31,4 +31,4 @@ jobs:
       - name: deploy to heroku
         run: |
           heroku git:remote -a spacex-pubsap
-          git push heroku master
+          git push heroku main
