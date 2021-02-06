@@ -33,4 +33,3 @@ jobs:
           heroku_api_key: ${{secrets.DEPLOY_SPACEX_PUBSAP_KEY}}
           heroku_app_name: "spacex-pubsap"
           heroku_email: "cod3rsurya@gmail.com"
-          remote_branch: main
