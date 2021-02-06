@@ -23,14 +23,14 @@ jobs:
       - name: run build
         run: npm run build:ssr
 
-  add_heroku_remote:
+  deploy:
     needs: build
 
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1
-      
+
       - name: Login to Heroku Container registry
         env: 
           HEROKU_API_KEY: ${{ secrets.DEPLOY_SPACEX_PUBSAP_KEY }}
@@ -41,7 +41,7 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.DEPLOY_SPACEX_PUBSAP_KEY }}
         run: heroku container:push -a spacex-pubsap web 
         
-     -  name: Release
+      - name: Release
         env:
           HEROKU_API_KEY: ${{ secrets.DEPLOY_SPACEX_PUBSAP_KEY }}
         run: heroku container:release -a spacex-pubsap web 
