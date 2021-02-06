@@ -28,17 +28,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: login to heroku
-        env:
-          HEROKU_API_KEY: ${{secrets.DEPLOY_SPACEX_PUBSAP_KEY}}
-        run: heroku container:login 
-      
-      - name: Build and push
-        env:
-          HEROKU_API_KEY: ${{ secrets.DEPLOY_SPACEX_PUBSAP_KEY }}
-        run: heroku container:push -a spacex-pubsap web
-
-      - name: Release
-        env:
-          HEROKU_API_KEY: ${{ secrets.DEPLOY_SPACEX_PUBSAP_KEY }}
-        run: heroku container:release -a spacex-pubsap web
+      - uses: akhileshns/heroku-deploy@v3.10.9
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "YOUR APP's NAME"
+          heroku_email: "YOUR EMAIL"
+          remote_branch: main
