@@ -30,7 +30,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: akhileshns/heroku-deploy@v3.10.9
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "YOUR APP's NAME"
-          heroku_email: "YOUR EMAIL"
+          heroku_api_key: ${{secrets.DEPLOY_SPACEX_PUBSAP_KEY}}
+          heroku_app_name: "spacex-pubsap"
+          heroku_email: "cod3rsurya@gmail.com"
           remote_branch: main
