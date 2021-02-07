@@ -8,38 +8,17 @@ on:
 
   workflow_dispatch:
 jobs:
-  #build:
-    #runs-on: ubuntu-latest
-
-   # steps:
-     # - uses: actions/checkout@v2
-
-      #- name: run npm install
-     #   run: npm install
-        
-      #- name: run tests
-       # run: npm run test
-      
-      #- name: run build
-       # run: npm run build:ssr
-  
-  login:
-    #needs: build
-
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: login heroku
-        run: heroku login -i
-
-      - name: echo
-        run: echo "a"
-          
-
-      #- name: add heroku app remote
-       # run: heroku git:remote -a spacex-pubsap
-
-     #- name: push to heroku
-        #run: git push heroku main
+      - name: run npm install
+        run: npm install
+        
+      - name: run tests
+        run: npm run test
+      
+      - name: run build
+        run: npm run build:ssr
