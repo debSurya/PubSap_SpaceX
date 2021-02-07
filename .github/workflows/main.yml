@@ -32,7 +32,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: login heroku
-        run: heroku login | echo "a"
+        run: heroku login
+        run: echo "a"
           
 
       #- name: add heroku app remote
