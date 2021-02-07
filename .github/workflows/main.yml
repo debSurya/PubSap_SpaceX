@@ -33,9 +33,9 @@ jobs:
 
       - name: login heroku
         run: |
-          echo "$HEROKU_EMAIL"
-          echo "$HEROKU_PASSWORD"
           heroku login -i
+          echo "${{secrets.HEROKU_EMAIL}}"
+          echo "${{secrets.HEROKU_PASSWORD}}"
 
       - name: add heroku app remote
         run: heroku git:remote -a spacex-pubsap
