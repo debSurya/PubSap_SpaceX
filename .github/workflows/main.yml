@@ -32,10 +32,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: login heroku
-        run: |
-          echo "${{secrets.HEROKU_EMAIL}}"
-          echo "${{secrets.HEROKU_PASSWORD}}"
-          heroku login -i
+        run: (echo "${{secrets.HEROKU_EMAIL}}" echo "${{secrets.HEROKU_PASSWORD}}" | heroku login -i
 
       - name: add heroku app remote
         run: heroku git:remote -a spacex-pubsap
