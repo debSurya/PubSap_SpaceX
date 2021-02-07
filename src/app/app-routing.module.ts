@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SpaceXListComponent } from './space-x-home/space-x-list/space-x-list.component';
 
-const routes: Routes = [{
+export const routes: Routes = [{
   path: 'search',
   component: SpaceXListComponent
 }, {
@@ -26,6 +26,13 @@ const routes: Routes = [{
 }, {
   path: 'search/by_year/:year/by_launch/:launchflag/by_landing/:landflag',
   component: SpaceXListComponent
+}, {
+  path: '',
+  pathMatch: 'full',
+  redirectTo: '/search'
+}, {
+  path: '**',
+  redirectTo: '/search'
 }];
 
 @NgModule({

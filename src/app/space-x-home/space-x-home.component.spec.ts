@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SpaceXHomeComponent } from './space-x-home.component';
 
-describe('SpaceXHomeComponent', () => {
+fdescribe('SpaceXHomeComponent', () => {
   let component: SpaceXHomeComponent;
   let fixture: ComponentFixture<SpaceXHomeComponent>;
 

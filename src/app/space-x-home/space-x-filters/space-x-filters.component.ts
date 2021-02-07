@@ -20,10 +20,9 @@ export class SpaceXFiltersComponent implements OnInit {
       launchState: null,
       landingState: null
     };
-  private routeUrl = '';
 
   ngOnInit(): void {
-    this.router.navigateByUrl('search');
+    this.router.navigate(['search']);
     for (let year = 2006; year <= (new Date()).getFullYear(); year++) {
       this.launchYears.push(year);
     }

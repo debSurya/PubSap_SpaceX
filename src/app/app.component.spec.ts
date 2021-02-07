@@ -1,8 +1,12 @@
+import { Location } from '@angular/common';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
+fdescribe('AppComponent', () => {
+
+  let location: Location;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -12,7 +16,10 @@ describe('AppComponent', () => {
         AppComponent
       ],
     }).compileComponents();
+
+    location = TestBed.inject(Location);
   });
+
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -26,10 +33,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('SpaceXApp');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('SpaceXApp app is running!');
+  it(`should route to ''`, () => {
+    expect(location.path()).toBe('');
   });
 });

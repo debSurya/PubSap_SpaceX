@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SpaceXListComponent } from './space-x-list.component';
 
-describe('SpaceXListComponent', () => {
+fdescribe('SpaceXListComponent', () => {
   let component: SpaceXListComponent;
   let fixture: ComponentFixture<SpaceXListComponent>;
 

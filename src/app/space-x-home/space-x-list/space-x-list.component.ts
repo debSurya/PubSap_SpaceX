@@ -25,7 +25,6 @@ export class SpaceXListComponent implements OnInit, OnDestroy {
     let url = '', param;
     this.routeParamSub = this.route.paramMap
       .subscribe((paramMap: ParamMap) => {
-        console.log(paramMap);
         param = paramMap.get('year');
         if (!!param) {
           url += '&launch_year=' + param;
