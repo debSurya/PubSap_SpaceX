@@ -33,10 +33,10 @@ jobs:
 
       - name: login heroku
         run: heroku login
+          
 
+      #- name: add heroku app remote
+       # run: heroku git:remote -a spacex-pubsap
 
-      - name: add heroku app remote
-        run: heroku git:remote -a spacex-pubsap
-
-      - name: push to heroku
-        run: git push heroku main
+      - #name: push to heroku
+        #run: git push heroku main
