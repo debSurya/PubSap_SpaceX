@@ -23,7 +23,7 @@ jobs:
       #- name: run build
        # run: npm run build:ssr
   
-  deploy:
+  login:
     #needs: build
 
     runs-on: ubuntu-latest
@@ -32,10 +32,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: login heroku
-        run: (
-          echo "${{secrets.HEROKU_EMAIL}}"
-          echo "${{secrets.HEROKU_PASSWORD}}"
-          ) | heroku login
+        run: heroku login -i
+
 
       - name: add heroku app remote
         run: heroku git:remote -a spacex-pubsap
