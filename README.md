@@ -4,24 +4,28 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm run dev:ssr` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `npm run build:ssr` to build the project. The build artifacts will be stored in the `dist/` directory. The build will run in production mode.
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Application code building overview
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Created the project and its respective components and services using Angular CLI. The application is divided into the following component structure:-
+    - app
+        - space-x-home
+            - space-x-filters
+            - space-x-list (via route)
+        - footer
+Responsive media queries are written in global styles.scss and individual component based styles are among respective component specific scss files.
+A `server.js` file is present which is responsible for rendering the `index.html` of the application onto the relative path of Heroku's deployed URL.
+For deploying onto Heroku, `heroku-postbuild` cmd is added onto package.json which is triggered while deploying onto Heroku.
 
-## Further help
+## Chrome lighthouse report
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Chrome lighthouse report](assets/sapcex_pubsap_lighthouse_report.png?raw=true)
