@@ -28,4 +28,4 @@ For deploying onto Heroku, `heroku-postbuild` cmd is added onto package.json whi
 ## Application build test using Github actions pipeline
 
 A Github Actions workflow file is present which is used to run the pipeline jobs triggered whenever something is pushed onto the main branch, or if any pull request is merged.<br/>
-The pipeline is responsible for running the checks on build and unit tests of the application and sends the status via mail.
+The pipeline is responsible for running the checks on build and unit tests of the application.
