@@ -1,4 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
 body {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+@media screen and (max-width: 700px) {
+    .head-text {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .filters-section {
+        width: 100% !important;
+
+        .filters-container {
+            margin: 0 auto;
+
+            .filters-head-text {
+                text-align: center;
+                font-size: 18px !important;
+            }
+        }
+    }
+
+    .results-section {
+        width: 100% !important;
+
+        .result {
+            padding: 15px 0px !important;
+            margin: 0 auto;
+            display: block !important;
+
+            .mission-img img {
+                width: 180px !important;
+                padding: 5px 0px;
+            }
+
+            .mission-name-flight-text {
+                font-size: 16px !important;
+            }
+
+            .mission-ids {
+                font-size: 15px !important;
+            }
+
+            .launch-details-text {
+                font-size: 16px !important;
+            }
+        }
+    }
 }
