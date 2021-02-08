@@ -13,10 +13,15 @@ body {
 
         .filters-container {
             margin: 0 auto;
+            padding: 5px 15% !important;
 
             .filters-head-text {
                 text-align: center;
                 font-size: 18px !important;
+            }
+
+            .filter-type-text div {
+                width: 50% !important;
             }
         }
     }
@@ -30,9 +35,8 @@ body {
             display: block !important;
 
             .mission-img {
-                padding: 5px 0px;
-                height: 200px;
-
+                height: 200px !important;
+                
                 img {
                     width: 200px !important;
                 }
@@ -48,6 +52,43 @@ body {
 
             .launch-details-text {
                 font-size: 16px !important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1024px) {
+    .filters-section {
+        width: 25% !important;
+    }
+
+    .results-section {
+        width: 75% !important;
+
+        .search-results-container {
+            margin: 0 auto;
+            width: 500px;
+
+            .result {
+                width: 190px !important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    // .filters-section {
+    // }
+
+    .results-section {
+        .search-results-container {
+            .mission-img {
+                height: 190px !important;
+                margin-bottom: 10px;
+
+                img {
+                    width: 190px !important;
+                }
             }
         }
     }

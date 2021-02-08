@@ -1,6 +1,5 @@
 .filters-container {
     padding: 5px;
-    width: 300px;
     user-select: none;
     .filters-head-text {
         font-size: 16px;
@@ -8,11 +7,14 @@
     }
     .filter-type-text {
         text-align: center;
-        box-shadow: 0px 1px 0px 0px;
-        width: 180px;
-        margin-left: 60px;
         margin-top: 15px;
         font-size: 15px;
+
+        div {
+            box-shadow: 0px 1px 0px 0px;
+            width: 70%;
+            margin: 0 auto;
+        }
     }
     .year-filter {
         display: inline-block;

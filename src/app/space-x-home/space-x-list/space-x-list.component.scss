@@ -1,28 +1,39 @@
 .search-results-container {
     padding: 10px;
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: center;
+
     .result {
         display: inline-block;
         width: 200px;
         padding: 10px 25px;
+
         .mission-img {
             text-align: center;
-            height: 200px;
-            background-image: url('../../../assets/image-loader.jpg');
+            height: 190px;
+            margin-bottom: 10px;
+            background-image: url("../../../assets/image-loader.jpg");
 
             img {
-                width: 150px;
+                width: 190px;
                 background-color: #ffffff;
             }
         }
+
         .mission-name-flight-text {
             font-size: 13px;
             color: #3e1988;
             font-weight: bold;
             padding: 5px 0px;
+            text-align: left;
         }
+
         .mission-ids {
             font-size: 13px;
             padding-top: 5px;
+            text-align: left;
+
             .ids-label {
                 font-weight: bold;
             }
@@ -34,13 +45,17 @@
                 }
             }
         }
+
         .launch-details-text {
             font-size: 13px;
             font-weight: bold;
             padding: 5px 0px;
+            text-align: left;
+
             .text {
                 padding-right: 2px;
             }
+
             .text-val {
                 color: #1c8ab7;
                 font-weight: normal;

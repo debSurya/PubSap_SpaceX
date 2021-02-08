@@ -1,7 +1,8 @@
 <div class="search-results-container">
     <div class="result" *ngFor="let result of spaceXSearchResults; trackBy: resultsTrackByFn">
         <div class="mission-img">
-            <img src={{result.links.mission_patch}}>
+            <img src={{result.links.mission_patch}} alt="mission image"
+                onerror="this.onerror=null; this.src='../../../assets/image-not-found.png'">
         </div>
         <div class="mission-name-flight-text">
             <span>{{result.mission_name}}#{{result.flight_number}}</span>
