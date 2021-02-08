@@ -16,12 +16,12 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Application code building overview
 
-Created the project and its respective components and services using Angular CLI. The application is divided into the following component structure:-
-    - app
-        - space-x-home
-            - space-x-filters
-            - space-x-list (via route)
-        - footer
+Created the project and its respective components and services using Angular CLI. The application is divided into the following component structure:-<br/>
+    * app
+        * space-x-home
+            * space-x-filters
+            * space-x-list (via route)
+        * footer
 Responsive media queries are written in global styles.scss and individual component based styles are among respective component specific scss files.<br/>
 A `server.js` file is present which is responsible for rendering the `index.html` of the application onto the relative path of Heroku's deployed URL.<br/>
 For deploying onto Heroku, `heroku-postbuild` cmd is added onto package.json which is triggered while deploying onto Heroku.
