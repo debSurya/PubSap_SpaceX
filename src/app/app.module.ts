@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxUiLoaderModule, SPINNER } from 'ngx-ui-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +21,13 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxUiLoaderModule.forRoot({
+      fgsType: SPINNER.threeStrings,
+      fgsColor: '#a5a5e6',
+      fgsSize: 100,
+      hasProgressBar: false
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

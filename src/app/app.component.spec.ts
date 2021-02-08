@@ -1,6 +1,8 @@
 import { Location } from '@angular/common';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { SpaceXFiltersComponent } from './space-x-home/space-x-filters/space-x-filters.component';
@@ -13,7 +15,8 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        NgxUiLoaderModule
       ],
       declarations: [
         AppComponent,

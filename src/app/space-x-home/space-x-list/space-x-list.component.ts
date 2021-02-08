@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { Subscription } from 'rxjs';
 
 import { SpaceXDetails } from 'src/app/app.component.model';
@@ -14,7 +15,8 @@ export class SpaceXListComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private launchDetailsService: LaunchDetailsService
+    private launchDetailsService: LaunchDetailsService,
+    private ngxLoaderService: NgxUiLoaderService
   ) { }
 
   private routeParamSub: Subscription;
@@ -43,12 +45,14 @@ export class SpaceXListComponent implements OnInit, OnDestroy {
   }
 
   getListOfDetailsFromAPI(url: string) {
+    this.ngxLoaderService.start();
     this.getDetailsSub = this.launchDetailsService.getListofLaunchDetails(url)
       .subscribe((data: SpaceXDetails[]) => {
         this.spaceXSearchResults = data;
         if (!!this.getDetailsSub) {
           this.getDetailsSub.unsubscribe();
         }
+        this.ngxLoaderService.stopAll();
       });
   }
 
