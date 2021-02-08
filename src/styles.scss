@@ -29,9 +29,13 @@ body {
             margin: 0 auto;
             display: block !important;
 
-            .mission-img img {
-                width: 200px !important;
+            .mission-img {
                 padding: 5px 0px;
+                height: 200px;
+
+                img {
+                    width: 200px !important;
+                }
             }
 
             .mission-name-flight-text {

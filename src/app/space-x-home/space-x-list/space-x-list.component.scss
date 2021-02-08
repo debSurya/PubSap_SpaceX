@@ -6,8 +6,12 @@
         padding: 10px 25px;
         .mission-img {
             text-align: center;
+            height: 200px;
+            background-image: url('../../../assets/image-loader.jpg');
+
             img {
                 width: 150px;
+                background-color: #ffffff;
             }
         }
         .mission-name-flight-text {
