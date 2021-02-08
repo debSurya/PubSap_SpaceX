@@ -2,8 +2,11 @@ import { Location } from '@angular/common';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { FooterComponent } from './footer/footer.component';
+import { SpaceXFiltersComponent } from './space-x-home/space-x-filters/space-x-filters.component';
+import { SpaceXHomeComponent } from './space-x-home/space-x-home.component';
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
 
   let location: Location;
 
@@ -13,7 +16,10 @@ fdescribe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        SpaceXHomeComponent,
+        FooterComponent,
+        SpaceXFiltersComponent
       ],
     }).compileComponents();
 

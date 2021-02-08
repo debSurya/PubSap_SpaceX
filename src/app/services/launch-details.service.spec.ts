@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { LaunchDetailsService } from './launch-details.service';
 
-fdescribe('LaunchDetailsService', () => {
+describe('LaunchDetailsService', () => {
   let service: LaunchDetailsService;
 
   beforeEach(() => {

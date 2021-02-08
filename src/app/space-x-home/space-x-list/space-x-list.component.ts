@@ -46,7 +46,9 @@ export class SpaceXListComponent implements OnInit, OnDestroy {
     this.getDetailsSub = this.launchDetailsService.getListofLaunchDetails(url)
       .subscribe((data: SpaceXDetails[]) => {
         this.spaceXSearchResults = data;
-        this.getDetailsSub.unsubscribe();
+        if (!!this.getDetailsSub) {
+          this.getDetailsSub.unsubscribe();
+        }
       });
   }
 

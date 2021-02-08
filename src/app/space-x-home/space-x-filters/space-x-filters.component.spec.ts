@@ -6,7 +6,7 @@ import { routes } from 'src/app/app-routing.module';
 
 import { SpaceXFiltersComponent } from './space-x-filters.component';
 
-fdescribe('SpaceXFiltersComponent', () => {
+describe('SpaceXFiltersComponent', () => {
   let component: SpaceXFiltersComponent,
     fixture: ComponentFixture<SpaceXFiltersComponent>,
     location: Location,
