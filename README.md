@@ -28,4 +28,4 @@ For deploying onto Heroku, `heroku-postbuild` cmd is added onto package.json whi
 
 ## Chrome lighthouse report
 
-![Chrome lighthouse report](assets/sapcex_pubsap_lighthouse_report.png?raw=true)
+![Chrome lighthouse report](spacex_pubsap_lighthouse_report.png?raw=true)
