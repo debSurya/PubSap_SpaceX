@@ -22,6 +22,7 @@ export class SpaceXListComponent implements OnInit, OnDestroy {
   private routeParamSub: Subscription;
   private getDetailsSub: Subscription;
   spaceXSearchResults: SpaceXDetails[] = [];
+  landingSuccessFlag = false;
 
   ngOnInit(): void {
     let url = '', param;
@@ -54,6 +55,10 @@ export class SpaceXListComponent implements OnInit, OnDestroy {
         }
         this.ngxLoaderService.stopAll();
       });
+  }
+
+  checkValAvailability(val: boolean | undefined): string | boolean {
+    return typeof val === 'undefined' ? 'NA' : val;
   }
 
   resultsTrackByFn(index: number, result: SpaceXDetails) {
