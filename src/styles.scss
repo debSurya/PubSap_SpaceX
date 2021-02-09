@@ -30,9 +30,12 @@ body {
         width: 100% !important;
 
         .result {
-            padding: 15px 0px !important;
-            margin: 0 auto;
+            padding: 10px 15px 15px 15px !important;
+            margin: 10px auto !important;
             display: block !important;
+            float: none !important;
+            min-height: 350px !important;
+            height: auto !important;
 
             .mission-img {
                 height: 200px !important;
@@ -77,11 +80,11 @@ body {
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
-    // .filters-section {
-    // }
 
     .results-section {
         .search-results-container {
+            width: 1140px;
+            
             .mission-img {
                 height: 190px !important;
                 margin-bottom: 10px;
