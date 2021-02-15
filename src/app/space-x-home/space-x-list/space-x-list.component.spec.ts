@@ -18,7 +18,14 @@ describe('SpaceXListComponent', () => {
       launch_year: 2000,
       launch_success: 2000,
       launch_landing: 2000,
-      links: { mission_patch: '' }
+      links: { mission_patch: '' },
+      rocket: {
+        first_stage: {
+          cores: [{
+            land_success: true
+          }]
+        }
+      }
     }]),
     activatedRouteStub = {
       paramMap: routeSubject.asObservable()
