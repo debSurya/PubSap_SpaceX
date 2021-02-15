@@ -6,4 +6,11 @@ export interface SpaceXDetails {
     launch_landing: boolean;
     mission_name: string;
     flight_number: number;
+    rocket: {
+        first_stage: {
+            cores: {
+                land_success: boolean | null
+            }[]
+        }
+    };
 }

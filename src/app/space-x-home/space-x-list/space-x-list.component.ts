@@ -57,8 +57,8 @@ export class SpaceXListComponent implements OnInit, OnDestroy {
       });
   }
 
-  checkValAvailability(val: boolean | undefined): string | boolean {
-    return typeof val === 'undefined' ? 'NA' : val;
+  checkValAvailability(val: boolean | null): string | boolean {
+    return val === null ? 'NA' : val;
   }
 
   resultsTrackByFn(index: number, result: SpaceXDetails) {
